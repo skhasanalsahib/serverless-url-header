@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Load the initial page based on the URL
-    const initialPage = window.location.pathname.replace('/', '') || 'home';
+    const initialPage = window.location.pathname.split('/').pop() || 'home';
     loadPage(initialPage);
 });
