@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(data => {
                 content.innerHTML = data;
-                history.pushState(null, '', page);
+                const basePath = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/');
+                history.pushState(null, '', `${basePath}/${page}`);
             })
             .catch(error => console.error('Error loading page:', error));
     }
